@@ -68,20 +68,22 @@ class Item:
 # Step 8: Create instances of the Item class and demonstrate the use of getters and setters.
 # For example, create a new Item and attempt to set its attributes with both valid and invalid values.
 # Print the outputs using the getters to show how the data is managed internally.
-try:
-    item1 = Item("banana", 10, 10)
-    print("successfully created item", "name:", item1.get_name(), "price:", item1.get_price(), "quantity:", item1.get_quantity())
-except ValueError as e:
-    print("Error creating item", e)
+        
+if __name__ == "main":
+    try:
+        item1 = Item("banana", 10, 10)
+        print("successfully created item", "name:", item1.get_name(), "price:", item1.get_price(), "quantity:", item1.get_quantity())
+    except ValueError as e:
+        print("Error creating item", e)
 
-try:
-    item2 = Item("apple", -10, 10)
-    print("successfully created item", "name:", item2.get_name(), "price:", item2.get_price(), "quantity:", item2.get_quantity())
-except ValueError as e:
-    print("Error creating item", e)
+    try:
+        item2 = Item("apple", -10, 10)
+        print("successfully created item", "name:", item2.get_name(), "price:", item2.get_price(), "quantity:", item2.get_quantity())
+    except ValueError as e:
+        print("Error creating item", e)
 
-try:
-    item2 = Item("92637819", 10, 10)
-    print("successfully created item", "name:", item2.get_name(), "price:", item2.get_price(), "quantity:", item2.get_quantity())
-except ValueError as e:
-    print("Error creating item", e)
+    try:
+        item2 = Item("92637819", 10, 10)
+        print("successfully created item", "name:", item2.get_name(), "price:", item2.get_price(), "quantity:", item2.get_quantity())
+    except ValueError as e:
+        print("Error creating item", e)
