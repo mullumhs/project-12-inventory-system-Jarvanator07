@@ -22,7 +22,15 @@ class InventoryManager:
 
     def add_item(self, name, price, quantity):
         item = Item(name, price, quantity)
-        self.items.append(item)
+        self._items.append(item)
+
+    def update_item(self, name, price, quantity):
+        item = self.get_item(name)
+        if item:
+            item.set_price(price)
+            item.set_quantity(quantity)
+        else:
+            raise ValueError("Item not found")
 
     def remove_item(self, name):
         item = self.get_item(name)
@@ -31,14 +39,6 @@ class InventoryManager:
         else:
             raise ValueError("Item not found")
             
-    def update_item(self, name, price, quantity):
-        item = self.get_item(name)
-        if item:
-            item.set_price(price)
-            item.set_quantity(quantity)
-        else:
-            raise ValueError("Item not found")
-    
     def display_inventory(self):
         for item in self._items:
             print(item.get_name(), item.get_price(), item.get_quantity())
@@ -48,5 +48,14 @@ class InventoryManager:
 # Step 2: Create instances of the Item class and InventoryManager, then demonstrate their usage.
 # E.g. add items to the inventory, remove items, update items, and display the inventory.
 
+potions = InventoryManager()
+enchantments = InventoryManager()
+talismans = InventoryManager()
 
+potions.add_item("Healing Potion.", 10, 10)
+enchantments.add_item("Fire Resistance.", 100, 4)
+talismans.add_item("Talisman of Fire Resistance.", 1000, 1)
+potions.display_inventory()
+enchantments.display_inventory()
+talismans.display_inventory()
 

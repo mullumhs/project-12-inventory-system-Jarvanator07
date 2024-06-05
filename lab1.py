@@ -37,7 +37,7 @@ class Item:
     # This method should return the price formatted as a string with two decimal places.
         
     def get_price(self):
-        return "{:.2f}".format(self.__price)
+        return "Price: ${:.2f}".format(self.__price)
 
     # Step 5: Implement a setter for the price attribute.
     # This method should check if the provided value is a non-negative number before setting the _price attribute.
@@ -53,7 +53,7 @@ class Item:
     # This method should simply return the value of the private _quantity attribute.
 
     def get_quantity(self):
-        return self.__quantity
+        return "quantity: {:.0f}".format(self.__quantity)
 
     # Step 7: Implement a setter for the quantity attribute.
     # This method should check if the provided value is a non-negative integer before setting the _quantity attribute.
@@ -83,7 +83,7 @@ if __name__ == "main":
         print("Error creating item", e)
 
     try:
-        item2 = Item("92637819", 10, 10)
-        print("successfully created item", "name:", item2.get_name(), "price:", item2.get_price(), "quantity:", item2.get_quantity())
+        item3 = Item("92637819", 10, 10)
+        print("successfully created item", "name:", item3.get_name(), "price:", item3.get_price(), "quantity:", item3.get_quantity())
     except ValueError as e:
         print("Error creating item", e)
