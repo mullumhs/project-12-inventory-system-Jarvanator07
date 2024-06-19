@@ -31,7 +31,7 @@ class Item:
         if isinstance(name, str):
             self.__name = name
         else:
-            raise ValueError("Name must be a string")
+            raise TypeError("Name must be a string")
 
     # Step 4: Implement a getter for the price attribute.
     # This method should return the price formatted as a string with two decimal places.
@@ -69,7 +69,7 @@ class Item:
 # For example, create a new Item and attempt to set its attributes with both valid and invalid values.
 # Print the outputs using the getters to show how the data is managed internally.
         
-if __name__ == "main":
+if __name__ == '__main__':
     try:
         item1 = Item("banana", 10, 10)
         print("successfully created item", "name:", item1.get_name(), "price:", item1.get_price(), "quantity:", item1.get_quantity())
